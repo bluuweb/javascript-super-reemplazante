@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            .borde-rojo {
+                border: solid 2px red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="borde-rojo">Hola js</h1>
+
+        <!-- <img
+            id="imagenPikachu"
+            src="pikachu.jpeg"
+            alt=""
+            onclick="dameClick()"
+            width="300px"
+        /> -->
+
+        <img id="imagenPikachu" src="pikachu.jpeg" alt="" width="300px" />
+
+        <script>
+            const imagenPikachu = document.getElementById("imagenPikachu");
+
+            // imagenPikachu.addEventListener("click", function () {
+            //     console.log("me diste click");
+            //     imagenPikachu.classList.toggle("borde-rojo");
+            // });
+
+            imagenPikachu.addEventListener("click", dameClick);
+
+            function dameClick() {
+                console.log("me diste click");
+                const imagenPikachu = document.getElementById("imagenPikachu");
+
+                console.log(imagenPikachu.style.border);
+
+                if (imagenPikachu.style.border === "") {
+                    imagenPikachu.style.border = "solid 2px red";
+                } else {
+                    imagenPikachu.style.border = "";
+                }
+
+                // imagenPikachu.classList.toggle("borde-rojo");
+            }
+
+            // operador ternario
+
+            const edad = 20;
+
+            // const resultado = edad === 18 ? "tienes 18 años" : "negativa";
+
+            // const resultado = edad === 18 && "tienes 18 años";
+
+            // console.log(resultado);
+
+            // if(edad === 18){
+            //     console.log('tienes 18 años')
+            // } else {
+            //     console.log('no tienes 18 :(')
+            // }
+
+            // detección de eventos
+        </script>
+    </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="text-center">Select</h1>
+
+            <form id="formulario">
+                <input
+                    type="text"
+                    placeholder="Ingrese edad"
+                    class="form-control"
+                    id="edad"
+                />
+
+                <input
+                    type="text"
+                    placeholder="Ingrese pokemon uno"
+                    class="form-control"
+                    id="pokemonUno"
+                />
+
+                <input
+                    type="text"
+                    placeholder="Ingrese pokemon dos"
+                    class="form-control"
+                    id="pokemonDos"
+                />
+
+                <select name="" id="pokemon" class="form-control mt-2">
+                    <option value="pikachu">Pikachu</option>
+                    <option value="charizar">Charizar</option>
+                    <option value="Squale">Squale</option>
+                </select>
+                <button type="submit" class="btn btn-primary w-100 mt-2">
+                    Enviar
+                </button>
+            </form>
+
+            <div id="resultado"></div>
+        </div>
+
+        <script>
+            const formulario = document.getElementById("formulario");
+            const edad = document.getElementById("edad");
+            const pokemon = document.getElementById("pokemon");
+            const pokemonUno = document.getElementById("pokemonUno");
+            const pokemonDos = document.getElementById("pokemonDos");
+            const resultado = document.getElementById("resultado");
+
+            formulario.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                // validar inputs
+                if (edad.value === "") {
+                    alert("Por favor escribe tu edad");
+                }
+
+                // resultado.textContent =
+                //     pokemonUno.value + " " + pokemonDos.value;
+
+                // Template String
+                // resultado.textContent = `Tus pokemones: ${pokemonUno.value} ${pokemonDos.value}`;
+                resultado.innerHTML = `<h1>
+                    Tus pokemones: ${pokemonUno.value} ${pokemonDos.value} 
+                    ${edad.value === "18" ? "Tienes 18" : "No tienes 18"}
+                </h1>`;
+
+                // enviar los datos
+
+                // reiniciar los datos
+                edad.value = "";
+            });
+
+            //formData
+        </script>
+    </body>
+</html>
